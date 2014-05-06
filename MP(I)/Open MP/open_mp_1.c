@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <omp.h>
+
 const int NMAX = 1000000;
 const int TMAX = 100; 
+
 int main() {
 	omp_set_num_threads(TMAX);
 	int a[NMAX];
@@ -19,12 +21,12 @@ int main() {
 		int thread = omp_get_thread_num();
 		printf("Thread %d of %d\n", thread, omp_get_num_threads());
 		for (i = thread*NMAX/TMAX; i < (thread+1)*NMAX/TMAX; i++)
-		b[i] = a[i];
+			b[i] = a[i];
 	}
   
 	printf("\n");
 	for (i = 0; i < TMAX / 10; i++)
-		printf("b[%d] = %d\n", i + TMAX, b[i+TMAX]);
+		printf("b[%d] = %d\n", i+TMAX, b[i+TMAX]);
   
 	long long t2 = omp_get_wtime();
 	printf("t2 = %d, t1 = %d, dt = %lld\n", t2, t1, t2-t1);
