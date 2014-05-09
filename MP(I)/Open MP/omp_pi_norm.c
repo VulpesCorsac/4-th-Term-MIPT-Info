@@ -26,3 +26,5 @@ int main()
     }
     return 0;
 }
+
+// compile gcc -fopenmp -lm 1.c -o 1

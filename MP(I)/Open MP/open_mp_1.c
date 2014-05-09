@@ -34,4 +34,4 @@ int main() {
 	return 0;
 }
 // export OMP_NUM_THREADS=N
-// compile gcc -fomp 1.c -o 1
+// compile gcc -fopenmp -lm 1.c -o 1

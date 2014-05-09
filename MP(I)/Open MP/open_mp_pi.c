@@ -20,4 +20,4 @@ int main() {
 	printf("%10.9f\n", 4.0f*s);
 	return 0;
 }
-// gcc -fopenmp -lm open_mp_pi.c -o 1
+// compile gcc -fopenmp -lm 1.c -o 1
